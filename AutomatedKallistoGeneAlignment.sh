@@ -25,6 +25,8 @@ echo "Genome file: $genome_file"
 echo "--> AKG will now analyze the quality of your samples with FastQC"
 cd $input_folder
 fastqc *.gz -t $threads
+
+# FAILS HERE
 mv *fastqc* /home/andresunix/rnaseq/new_AKG/fastqc
 echo "--> AKG has finished analyzing the quality of your samples with FastQC"
 echo "--> AKG will now create an index based on your refernce genome"
