@@ -3,11 +3,6 @@
 echo "----Wellcome to Automated Kallisto Gene alignment [AKG]----"
 echo "This script will align all your samples in a new folder using Kallisto, and checking their quality with FastQC and MultiQC."
 
-# create the folders for the output
-mkdir -p /home/andresunix/rnaseq/new_AKG
-mkdir -p /home/andresunix/rnaseq/new_AKG/fastqc
-mkdir -p /home/andresunix/rnaseq/new_AKG/kallisto
-mkdir -p /home/andresunix/rnaseq/new_AKG/index
 
 # Prompt the user for the input folder
 read -p "Enter the absolute path to the input folder (containing *.gz files): " input_folder
@@ -21,14 +16,10 @@ read -p "Enter the number of threads available in your machine: " threads
 echo "Input folder: $input_folder"
 echo "Genome file: $genome_file"
 
-# Analyze .gz files with FastQC
-echo "--> AKG will now analyze the quality of your samples with FastQC"
-cd $input_folder
-fastqc *.gz -t $threads
 
-# Move files to the fastqc folder
+# FAILS HERE
 cd $input_folder
-mv *fastqc* /home/andresunix/rnaseq/new_AKG/fastqctqc
+mv *fastqc* /home/andresunix/rnaseq/new_AKG/fastqc
 echo "--> AKG has finished analyzing the quality of your samples with FastQC"
 echo "--> AKG will now create an index based on your refernce genome"
 # create the index for the reference genome
