@@ -1,7 +1,5 @@
 #!/bin/bash
 
-conda activate rnaseq
-
 echo "----Wellcome to Automated Kallisto Gene alignment [AKG]----"
 echo "This script will align all your samples in a new folder using Kallisto, and checking their quality with FastQC and MultiQC."
 
@@ -14,7 +12,7 @@ mkdir -p /home/andresunix/rnaseq/new_AKG/index
 read -p "Enter the absolute path to the input folder (containing *.gz files): " input_folder
 
 # Prompt the user for the output folder
-read -p "Enter the absolute path to the reference genome (containing a *.fa file): " genome_file
+read -p "Enter the absolute path to the reference genome folder (containing a *.fa file): " genome_file
 
 # Prompt the user for the threads to be used
 read -p "Enter the number of threads available in your machine: " threads
