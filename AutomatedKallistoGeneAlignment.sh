@@ -16,6 +16,9 @@ read -p "Enter the absolute path to the input folder (containing *.gz files): " 
 # Prompt the user for the output folder
 read -p "Enter the absolute path to the reference genome (containing a *.fa file): " genome_file
 
+# Prompt the user for the threads to be used
+read -p "Enter the number of threads available in your machine: " threads
+
 echo "Input folder: $input_folder"
 echo "Genome file: $genome_file"
 
@@ -31,7 +34,6 @@ cd /home/andresunix/rnaseq/new_AKG/index
 kallisto index -i Homo_sapiens.GRCh38.cdna.all.index $genome_file/Homo_sapiens.GRCh38.cdna.all.fa 
 echo "--> AKG has finished the index"
 # Set the number of threads
-threads=8
 
 # Iterate through all ".gz" files in the input folder
 for input_file in "$input_folder"/*.gz; do
