@@ -22,7 +22,11 @@ for input_file in "$input_folder"/*.gz; do
     # Create an output folder for the sample
     sample_output_folder="$output_folder/$base_name"
     mkdir -p "$sample_output_folder"
+    echo "-> The sample $base_name is being aligned now by Kallisto"
 
     # Run kallisto quant for each input file
     kallisto quant -i "$index_file" -o "$sample_output_folder" -t "$threads" --single -l 250 -s 30 "$input_file" > "$sample_output_folder/$base_name.log" 2>&1
+    echo "-> Kallisto has finished aligning $base_name, a log file has been also produced"
 done
+
+echo "--> multiKallisto has now Finished processing all your samples"
