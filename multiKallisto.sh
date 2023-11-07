@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Set the directory containing the "*.gz" files
-input_folder="~/rnaseq/rawdata/"  # Replace with your actual input folder
+input_folder="/home/andresunix/rnaseq/rawdata/"  # Replace with your actual input folder
 
 # Set the output folder
-output_folder="~/rnaseq/kallisto/"
+output_folder="/home/andresunix/rnaseq/kallisto/"
 
 # Set the index file
-index_file="~/rnaseq/index/Homo_sapiens.GRCh38.cdna.all.index"
+index_file="/home/andresunix/rnaseq/index/Homo_sapiens.GRCh38.cdna.all.index"
 
 echo "Input folder: $input_folder"
 echo "Index file: $index_file"
