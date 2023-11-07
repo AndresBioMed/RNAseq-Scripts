@@ -9,6 +9,7 @@ output_folder="/home/andresunix/rnaseq/kallisto/"
 # Set the index file
 index_file="/home/andresunix/rnaseq/index/Homo_sapiens.GRCh38.cdna.all.index"
 
+echo "--> multiKallisto will create subdirectories for all your samples while they are being aligned"
 echo "Input folder: $input_folder"
 echo "Index file: $index_file"
 # Set the number of threads
