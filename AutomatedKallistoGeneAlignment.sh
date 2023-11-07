@@ -23,7 +23,7 @@ echo "Genome file: $genome_file"
 # Analyze .gz files with FastQC
 echo "--> AKG will now analyze the quality of your samples with FastQC"
 cd $input_folder
-fastqc *.gz -t 8
+fastqc *.gz -t $threads
 mv *fastqc* /home/andresunix/rnaseq/new_AKG/fastqc
 echo "--> AKG has finished analyzing the quality of your samples with FastQC"
 echo "--> AKG will now create an index based on your refernce genome"
