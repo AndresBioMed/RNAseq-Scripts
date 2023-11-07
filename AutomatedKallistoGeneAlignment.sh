@@ -28,7 +28,7 @@ fastqc *.gz -t $threads
 mv *fastqc* /home/andresunix/rnaseq/new_AKG/fastqc
 echo "--> AKG has finished analyzing the quality of your samples with FastQC"
 echo "--> AKG will now create an index based on your refernce genome"
-# eate the index for the reference genome
+# create the index for the reference genome
 cd /home/andresunix/rnaseq/new_AKG/index
 kallisto index -i Homo_sapiens.GRCh38.cdna.all.index $genome_file/Homo_sapiens.GRCh38.cdna.all.fa 
 echo "--> AKG has finished the index"
