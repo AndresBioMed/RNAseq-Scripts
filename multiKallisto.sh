@@ -9,6 +9,8 @@ output_folder="~/rnaseq/kallisto/"
 # Set the index file
 index_file="~/rnaseq/index/Homo_sapiens.GRCh38.cdna.all.index"
 
+echo "Input folder: $input_folder"
+echo "Index file: $index_file"
 # Set the number of threads
 threads=8
 
