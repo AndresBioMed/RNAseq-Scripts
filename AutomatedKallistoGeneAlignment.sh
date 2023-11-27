@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "----Wellcome to Automated Kallisto Gene alignment [AKG]----"
+echo "-- Made by Andrés Gordo, 2023 --"
 echo "This script will align all your samples in a new folder using Kallisto, and checking their quality with FastQC and MultiQC."
 
 # create the folders for the output
