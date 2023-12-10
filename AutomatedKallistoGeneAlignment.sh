@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "----Wellcome to Automated Kallisto Gene alignment [AKG]----"
+echo "-- Made by Andrés Gordo, 2023 --"
 echo "This script will align all your samples in a new folder using Kallisto, and checking their quality with FastQC and MultiQC."
 
 # create the folders for the output
@@ -10,10 +11,10 @@ mkdir -p /home/andresunix/rnaseq/new_AKG/kallisto
 mkdir -p /home/andresunix/rnaseq/new_AKG/index
 
 # Prompt the user for the input folder
-read -p "Enter the absolute path to the input folder (containing *.gz files): " input_folder
+read -p "Enter the absolute path (use realpath) to the input folder (containing *.gz files): " input_folder
 
 # Prompt the user for the output folder
-read -p "Enter the absolute path to the reference genome folder (containing a *.fa file): " genome_file
+read -p "Enter the absolute path to the reference genome file (containing a *.fa file): " genome_file
 
 # Prompt the user for the threads to be used
 read -p "Enter the number of threads available in your machine: " threads
@@ -28,12 +29,12 @@ fastqc *.gz -t $threads
 
 # Move files to the fastqc folder
 cd $input_folder
-mv *fastqc* /home/andresunix/rnaseq/new_AKG/fastqctqc
+mv *fastqc* /home/andresunix/rnaseq/new_AKG/fastqc
 echo "--> AKG has finished analyzing the quality of your samples with FastQC"
 echo "--> AKG will now create an index based on your refernce genome"
 # create the index for the reference genome
 cd /home/andresunix/rnaseq/new_AKG/index
-kallisto index -i Homo_sapiens.GRCh38.cdna.all.index $genome_file/Homo_sapiens.GRCh38.cdna.all.fa 
+kallisto index -i Homo_sapiens.GRCh38.cdna.all.index $genome_file
 echo "--> AKG has finished the index"
 
 # Iterate through all ".gz" files in the input folder
